@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/galery.css">   
+    <link rel="stylesheet" href="orçcss/orçamento.css"> 
+    <link rel="stylesheet" href="contatoCss/contato.css">  
+    <link rel="stylesheet" href="homeCss/home.css"> 
+</head>
+<body>
+    <!--navBar-->
+    <div class="nav">
+        <div class="title">
+            <h1>Junior Construções</h1>
+        </div>
+        
+        <div class="navbar">
+            <ul>
+                <a href="#home"><li>Home</li></a>
+                <a href="#work"><li>Trabalhos</li></a>
+                <a href="#orcamento"><li>Orçamentos</li></a>
+                <a href="#contato"><li>Contato</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <!--home-->
+        <div class="home" id="home">
+            <div class="homeCenter"></div>
+            <div class="yellow"></div>
+            <div class="yellow2"><h2>JC Construções</h2></div>
+            <div class="gray"></div>
+            <div class="gray2"></div>
+            <div class="gray3"></div>
+            <div class="imgHome"></div>
+            <div class="textHome">
+                <p>Construir uma casa, um cômodo ou até mesmo reformar sua residência não é apenas um simples desejo, é um sonho, e nós entendemos profundamente essa aspiração.</p>
+                <p>Há mais de 10 anos, estamos dedicados não apenas a erguer estruturas, mas a concretizar sonhos! Ao longo dessa década, construindo residências e renovando ambientes, pudemos perceber o quão significativo é para nossos clientes verem seus projetos se tornarem realidade.</p>
+                <p>Agora chegou o momento de concretizar seus projetos!</p>
+                <p>Junior Construções, estamos aqui para tornar seus sonhos em realidade.</p>
+            </div>
+        </div>
+
+        <!--trabalhosRealizados-->
+        <div class="trabalhos" id="work">
+            <div class="trabalhos2">
+                <div class="txtH2"><h2>TRABALHOS REALIZADOS</h2></div>
+                <div class="imgTrabalho">
+                    <img src="img/homem-apontando.png" alt="">
+                </div>
+                <div class="tRealizados">
+                   
+                    <div class="container">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 6</div>
+                        <img src=".//img/FotoJet.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="./img/img4.jpeg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="./img/img5.jpeg" style="width:100%">
+                    </div>
+                        
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="./img/img6.jpeg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="./img/img7.jpeg" style="width:100%">
+                    </div>
+                        
+                    <div class="mySlides">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="./img/img8.jpeg" style="width:100%">
+                    </div>
+                        
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <img class="demo cursor" src=".//img/FotoJet.jpg" style="width:100%;"  onclick="currentSlide(1)" alt="The Woods">
+                        </div>
+                        <div class="column">
+                        <img class="demo cursor" src="./img/img4.jpeg" style="width:100%;" onclick="currentSlide(2)" alt="Cinque Terre">
+                        </div>
+                        <div class="column">
+                        <img class="demo cursor" src="./img/img5.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                        </div>
+                        <div class="column">
+                        <img class="demo cursor" src="./img/img6.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                        </div>
+                        <div class="column">
+                        <img class="demo cursor" src="./img/img7.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                        </div>    
+                        <div class="column">
+                        <img class="demo cursor" src="./img/img8.jpeg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                        </div>
+                    </div>
+                    </div>
+
+                    <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("demo");
+                    let captionText = document.getElementById("caption");
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                    captionText.innerHTML = dots[slideIndex-1].alt;
+                    }
+                    </script>
+                    
+                </div>
+            </div>
+
+        </div>
+        <!--orçamemtos-->
+        <div class="orçamentos" id="orcamento" style="height: 100vh;width: 100vw; background: azure; position: relative;">
+            <div class="orç2">
+                <div class="orçdark"></div>
+            </div>
+            <div class="formTxt">
+                <p>Complete o formulário ao lado com suas informações e, no campo de texto, forneça detalhes sobre o projeto que você deseja realizar.</p>
+                <p>Um membro da nossa equipe entrará em contato com você prontamente.</p>
+            </div>
+            <div class="form">
+                <h2>ORÇAMENTO SEM COMPROMISSO</h2>
+                <form action="#">
+                    <fieldset>
+                        <input type="text" placeholder="Nome Completo" name="nome" id="nome" required><br/>
+                        <input type="email" placeholder="E-Mail" required><br/>
+                        <input type="tel" placeholder="Telefone"><br/>
+                        <input type="text" placeholder="Cidade"><br/>
+                        <input type="text" placeholder="Estado"><br>
+                        <textarea name="text" id="text" cols="30" rows="5">Mensagem</textarea>
+                    </fieldset>
+                    <input type="submit" id="enviar">
+                </form>
+            </div>
+        </div>
+
+        <!--contato-->
+        <div class="contato" id="contato">
+            <div class="nota">
+                <p>Entre em contato conosco para esclarecer suas dúvidas e agendar orçamentos.</p><br/>
+                <p>Além disso, não deixe de seguir nossas redes sociais para acompanhar de perto nossos trabalhos e projetos.</p><br/>
+                <p>Estamos à disposição para atendê-lo da melhor forma possível.</p>
+            </div>
+            <div class="contato2">
+                <div class="cont">
+                    <div class="imgcont"><img src="./imgContato/contato.png" alt=""></div>
+                    <div class="seccont"><p2>Telefone</p2><br/><P2>(19) 99999-9999</P2></div>
+                </div>
+                <div class="cont">
+                    <div class="imgcont"><img src="./imgContato/contato-png.png" alt=""></div>
+                    <div class="seccont"><p2>E-Mail</p2><br/><P2>seu@email.com</P2></div>
+                </div>
+            </div>
+            <div class="contato3">
+                <div class="cont">
+                    <div class="imgcont"><img src="./imgContato/whatsapp-logo-.png" alt=""></div>
+                    <div class="seccont"><p2>Whatsapp</p2><br/><P2>(19) 99999-9999</P2></div>
+                </div>
+                <div class="cont">
+                    <div class="imgcont"><img src="./imgContato/logo-instagram-4096.png" alt=""></div>
+                    <div class="seccont"><p2>@Junior.franca</p2><br/><P2>/juniorfranca0000</P2></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+    </div>
+</body>
+</html>
